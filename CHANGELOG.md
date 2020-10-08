@@ -1,5 +1,6 @@
 ## upcoming release
 ENHANCEMENTS:
+* add `dead-peer-detection.send_mode` in security_ike_gateway resource #43
 
 BUG FIXES:
 

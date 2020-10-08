@@ -36,6 +36,10 @@ The following arguments are supported:
 * `dead_peer_detection` - (Optional)([attribute-as-blocks mode](https://www.terraform.io/docs/configuration/attr-as-blocks.html)) Can be specified only once for declare RFC-3706 DPD configuration.
   * `interval` - (Optional)(`Int`) The interval at which to send DPD
   * `threshold` - (Optional)(`Int`) Maximum number of DPD retransmissions
+  * `send_mode` - (Optional)(`String`) Specify how probes are sent. Need to be `always-send`, `optimized` or `probe-idle-tunnel`.  
+    - `always-send` -> Send probes periodically regardless of incoming and outgoing data traffic.  
+    - `optimized` -> Send probes only when there is outgoing and no incoming data traffic - RFC3706.
+    - `probe_idle_tunnel` -> Send probes same as in optimized mode and also when there is no outgoing & incoming data traffic. 
 * `local_identity` - (Optional)([attribute-as-blocks mode](https://www.terraform.io/docs/configuration/attr-as-blocks.html)) Can be specified only once for declare local IKE identity configuration.
   * `type` - (Required)(`String`) Type of IKE identity.
   * `value` - (Optional)(`String`) Value for IKE identity
